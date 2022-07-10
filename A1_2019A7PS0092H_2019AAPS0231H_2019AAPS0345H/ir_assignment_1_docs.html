@@ -1,0 +1,1156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>ir_assignment_1 API documentation</title>
+<meta name="description" content="IR_Assignment_1.ipynb …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>ir_assignment_1</code></h1>
+</header>
+<section id="section-intro">
+<p>IR_Assignment_1.ipynb</p>
+<ul>
+<li>Navam Shrivastav 2019A7PS0092H</li>
+<li>Sukrit Kumar 2019AAPS0231H</li>
+<li>Shrikrishna Lolla 2019AAPS0345H</li>
+</ul>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python"># -*- coding: utf-8 -*-
+&#34;&#34;&#34;IR_Assignment_1.ipynb
+
+* Navam Shrivastav 2019A7PS0092H
+* Sukrit Kumar 2019AAPS0231H
+* Shrikrishna Lolla 2019AAPS0345H
+&#34;&#34;&#34;
+
+import os
+import pandas as pd
+import re
+import numpy as np
+import nltk
+from nltk.tokenize import word_tokenize
+from nltk.stem.snowball import SnowballStemmer
+from nltk.stem import WordNetLemmatizer
+from itertools import permutations
+import pickle
+
+&#34;&#34;&#34;# Class
+
+&#34;&#34;&#34;
+
+
+
+class InvertedIndex:
+    &#34;&#34;&#34; InvertedIndex data structure class with insert, search and find functions&#34;&#34;&#34;
+    def __init__(self):
+        &#34;&#34;&#34;
+        Initializes the inverted index data structure.
+        index: A dictionary that maps words to a list of doc_ids
+        voc_list: A list of all the unique words in the index
+        voc_count: The number of words in the index
+        &#34;&#34;&#34;
+        self.index = {}
+        self.voc_list = []
+        self.voc_count = 0
+    
+    def insert(self,word,doc_id):
+        &#34;&#34;&#34;
+        Inserts a word into the inverted index and adds a doc_id to the list 
+        \nArgs: word, doc_id
+        &#34;&#34;&#34;
+        if word not in self.index:
+            self.index[word] = [doc_id]
+            if word[-1] == &#34;$&#34;:
+              self.voc_list.append(word)
+            self.voc_count += 1
+        if doc_id not in self.index[word]:
+          self.index[word].append(doc_id)
+    def search(self,word):
+      &#34;&#34;&#34;
+      Searches the inverted index for a word and returns the list of doc_ids
+      \n used in case of wildcard queries
+      \n Args: word
+      &#34;&#34;&#34;
+      final_output = []
+      for w in self.index.keys():
+        if w.startswith(word):
+          final_output.append({ get_main(w): self.index[w]})
+      return final_output
+    def find(self,word):
+        &#34;&#34;&#34;
+        Find if a word exists in the inverted index
+        and returns the list of doc_ids otherwise None
+        \n used in case of regular queries 
+        \n Args: word
+        &#34;&#34;&#34;
+        if word in self.index:
+            return self.index[word]
+        else:
+            return None
+    def getSize(self):
+      &#34;&#34;&#34;
+      Returns the number of words in the inverted index
+      &#34;&#34;&#34;
+      return len(self.index)
+
+def get_main(word):
+  &#34;&#34;&#34;get the original word where $ is the last character,rotate word till we reach state 
+    \n Args : word
+  &#34;&#34;&#34;
+
+  while(word[-1] != &#39;$&#39;):
+    word = rotateString(word,1)
+  return word
+
+
+
+def convert(a,doc_id):
+  &#34;&#34;&#34; 
+  Another approach to just use ints instead of a full list to store doc ids in a binary form
+  for example if we store 9 as the value, the binary value will be 
+  00001001 which means the 1st and 4th docs have the word
+  &#34;&#34;&#34;
+
+  l = 1&lt;&lt;doc_id
+  return a|l
+
+bin(convert(2,3))
+
+&#34;&#34;&#34;# Preprocessing functions&#34;&#34;&#34;
+
+nltk.download(&#39;stopwords&#39;)
+nltk.download(&#39;punkt&#39;)
+
+def tokenize(s):
+    &#34;&#34;&#34; Tokenize the string using word_tokenize from nltk &#34;&#34;&#34;
+    return word_tokenize(s)
+
+stopwords = nltk.corpus.stopwords.words(&#39;english&#39;)
+def remove_stop_words(s):
+    &#34;&#34;&#34; Use nltk english stopwords list and remove such tokens from the list &#34;&#34;&#34;
+    stop_words = set(stopwords)
+    filtered_list = [w for w in s if w not in stop_words]
+    return filtered_list
+
+def stem_words(word_list):
+    &#34;&#34;&#34; Use the snowball stemming (Modified porter algorithm) to stem words &#34;&#34;&#34; 
+
+    stemmer = SnowballStemmer(&#34;english&#34;)
+    stemmed_words = []
+    for word in word_list:
+        stemmed_words.append(stemmer.stem(word))
+    return stemmed_words
+
+lemmatizer = WordNetLemmatizer()
+def lemmatize(s):
+    &#34;&#34;&#34; Lemmatization using the WordNet lemmatizer &#34;&#34;&#34; 
+    return lemmatizer.lemmatize(s)
+
+def edit_distance(s1, s2):
+    &#34;&#34;&#34; Edit distance function using dynamic programming 
+    \nCan perform 3 operations: insert, delete, replace
+    \n Args: s1(word 1), s2 (word 2)
+    &#34;&#34;&#34;
+    m = len(s1)
+    n = len(s2)
+    dp = np.zeros((m+1, n+1))
+    for i in range(m+1):
+        dp[i][0] = i
+    for j in range(n+1):
+        dp[0][j] = j
+    for i in range(1, m+1):
+        for j in range(1, n+1):
+            if s1[i-1] == s2[j-1]:
+                dp[i][j] = dp[i-1][j-1]
+            else:
+                dp[i][j] = 1 + min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1])
+    return dp[m][n]
+
+
+def rotateString(s, n):
+  &#34;&#34;&#34; rotate string s to the left by n places &#34;&#34;&#34;
+  return s[n:] + s[:n]
+
+
+def permutation(w):
+  &#34;&#34;&#34; used to make permuterm for wildcard queries \n Arg: word &#34;&#34;&#34; 
+  w = w + &#34;$&#34;
+  l = []
+  for i in range(0,len(w)):
+    l.append(rotateString(w,i))
+  return l
+
+permutation(&#34;hello&#34;)
+
+&#34;&#34;&#34;# Preprocessing Files&#34;&#34;&#34;
+
+
+doc_count = 0 
+&#34;&#34;&#34; Total no of documents &#34;&#34;&#34;
+
+doc_id_name_map = {}
+&#34;&#34;&#34; Map of doc_id to file name &#34;&#34;&#34; 
+
+
+def preProcess(directory):
+    &#34;&#34;&#34; 
+    Main function to generate the inverted index 
+    \nArgs: directory name where the files are stored
+    &#34;&#34;&#34; 
+    i_index = InvertedIndex() # create the inverted index
+    files = os.listdir(directory) # get all the files in the directory
+    files_list = []
+    for file in files:
+        if file.endswith(&#34;.txt&#34;): # only store text files
+            files_list.append(file)
+            #print(file)
+    print(f&#34;Total no of files is {len(files_list)}&#34;)
+    global doc_count,doc_id_name_map
+    doc_count = len(files_list)
+    for i in range(0, len(files_list)):
+      # i is doc id
+      with open(directory + &#34;/&#34; + files_list[i], &#39;r&#39;) as f:
+        text = f.read()
+        doc_id_name_map[i+1] = files_list[i]
+        #text = re.sub(r&#39;[^\w\s]&#39;, &#39;&#39;, text)
+        text = re.sub(&#34;[^a-zA-Z]&#34;,&#39; &#39;,text) # Consider only alphabets
+        text = text.lower() # convert to lowercase
+        #print(text)
+        print(i+1,files_list[i])
+        tokens = tokenize(text) # tokenize
+        rm_data = remove_stop_words(tokens) # remove stopwords
+        stemmed = stem_words(rm_data) # perform stemming
+
+        for w in stemmed:
+          p = permutation(w) # find all the permutations of the word
+          for pw in p:
+            i_index.insert(pw,i+1) # insert the word into the index
+    i_Index_save = open(&#39;output_index_final&#39;, &#39;ab&#39;)
+    pickle.dump(i_index, i_Index_save) # Save the generated index for later use                     
+    i_Index_save.close()
+    return i_index
+
+index = preProcess(&#34;IR&#34;)
+&#34;&#34;&#34; Global variable for the Inverted Index &#34;&#34;&#34;
+
+#print(index.voc_list)
+
+#print(len(index.voc_list))
+
+
+def read_pickle(filename=&#34;output_index_final&#34;):
+  &#34;&#34;&#34; Function to load and read index from pre-existing pickle file 
+  \n Args: filename
+  &#34;&#34;&#34; 
+  filename = &#34;output_index_final&#34;
+  with open(filename,&#34;rb&#34;) as f:
+    index = pickle.load(f)
+    return index
+
+
+&#34;&#34;&#34;# Spelling correction&#34;&#34;&#34;
+
+
+def kClosest(q,index,k = 5):
+    &#34;&#34;&#34;
+    Return k (default 5) words in the corpus with least edit distance to the input query 
+    runs on against all the query terms where difference in length is 2
+    \n Args: query, index, k (default 5)
+    &#34;&#34;&#34;
+    output = {}
+    q = q + &#34;$&#34;
+    l = len(q)
+    for w in index.voc_list:
+      if abs(l - len(w)) &lt;= 2:
+        d = edit_distance(q,w)
+        output[w] = d
+    s = sorted(output.items(), key = lambda kv : kv[1])
+    return s[:k]
+
+
+def getCorrect(q_t,index):
+  &#34;&#34;&#34;
+  function to get the correct word for each query term,
+  if query term exists in index return q_t directly,
+  otherwise find k closest values and return the first one with the smallest distance
+  &#34;&#34;&#34;
+  if index.find(q_t):
+    return q_t
+  q_ed = kClosest(q_t,index)
+  for i in q_ed:
+    if int(i[1]) == 0:
+      return q_t
+    elif int(i[1]) &lt;= 5:
+      return i[0]
+    else:
+      return q_t
+
+kClosest(&#34;juleit&#34;,index)
+
+getCorrect(&#34;juliet$&#34;,index)
+
+
+
+&#34;&#34;&#34;# Boolean query&#34;&#34;&#34;
+
+def and_op(l1,l2):
+  &#34;&#34;&#34;
+  perform the and intersection between the two lists l1 and l2
+  \nArgs: l1 posting list for term 1 , l2 posting list for term 2 
+  &#34;&#34;&#34;
+  i = 0
+  j = 0
+  intersection = []
+  while i &lt; len(l1) and j &lt; len(l2):
+    if(l1[i] == l2[j]):
+      intersection.append(l1[i])
+      i += 1
+      j += 1
+    elif (l1[i] &lt; l2[j]):
+      i += 1
+    else:
+      j += 1
+  return intersection
+
+def or_op(l1,l2):
+  &#34;&#34;&#34;
+  perform the or operation on the two lists
+  l2 or l1
+  \nArgs: l1 posting list for term 1 , l2 posting list for term 2
+  &#34;&#34;&#34;
+  for i in l2:
+    if i not in l1:
+      l1.append(i)
+  return l1
+
+def not_op(l,size):
+  &#34;&#34;&#34;
+  negate the list and create a new list with all elements in space size 
+  and not in l
+  \nArgs: l posting list , size (no of documents in corpus)
+  &#34;&#34;&#34;
+  l_not = []
+  for i in range(1,size+1):
+    if i not in l:
+      l_not.append(i)
+  return l_not
+
+
+
+
+def getFilename(ret_list):
+  &#34;&#34;&#34;
+  get the file names corresponding to the final retirval list 
+  \nArgs: ret_list (list of doc_ids)
+  &#34;&#34;&#34;
+  for ret in ret_list[0]:
+    print(ret)
+    print(f&#34;Found in {doc_id_name_map[ret]}&#34;)
+  if len(ret_list[0]) == 0:
+    print(&#34;Not found&#34;)
+
+
+def retrieve():
+  &#34;&#34;&#34;
+  Query retrival function
+  take query input from user
+  tokenize,stem it
+  then create a retrival list for each query and perform boolean operations.
+  \n and print the final list of documents satisfying the query
+  &#34;&#34;&#34;
+  query = input()
+  query = tokenize(query) # tokenize the query
+  retrival_list = []
+  connect = [] # connectors like and or not
+  conn = [&#34;and$&#34;,&#34;or$&#34;,&#34;not$&#34;]
+  for q in query:
+    q =  q + &#34;$&#34; # append $ 
+    if q in conn:
+      connect.append(q)
+      continue
+    # don&#39;t correct wildcard queries 
+    if &#34;*&#34; in q:
+      while(q[-1] != &#39;*&#39;):
+        q = rotateString(q,1)
+        l = index.search(q[:-1])
+    else:
+      q = getCorrect(q,index) # get correct value for the query
+      l = index.find(q) # search in index
+    if l:
+      print(q)
+      print(l)
+    else:
+      l = []
+      print(&#34;No result found for &#34; + q)
+    if len(connect) &gt;= 1 and connect[-1] == &#34;not$&#34;:
+      #print(&#34;trig&#34;)
+      temp_cp = not_oper(l.copy(),doc_count)
+      retrival_list.append(temp_cp)
+    else:
+      retrival_list.append(l.copy())
+  if len(retrival_list) &gt; 1:
+    i_1 = 0
+    i_2 = 1
+    i = 0
+    for con in connect:
+      #print(con)
+      if con == &#34;and$&#34;:
+        comp = and_op(retrival_list[i_1],retrival_list[i_2])
+        temp_cp = retrival_list[2:]
+        retrival_list = [comp]
+        retrival_list.extend(temp_cp)
+      elif con == &#34;or$&#34;:
+        #print(&#34;trig&#34;,i)
+        comp = or_op(retrival_list[i_1],retrival_list[i_2])
+        #print(&#34;computed&#34; , comp)
+        temp_cp = retrival_list[2:]
+        #print(&#34;temp_cp&#34;, temp_cp)
+        #comp.extend(temp_cp)
+        retrival_list = [comp]
+        retrival_list.extend(temp_cp)
+        i += 1
+        #print(&#34;ret_list&#34;,retrival_list)
+      elif con == &#34;not$&#34;:
+        continue
+  getFilename(retrival_list)
+  return retrival_list
+
+retrieve()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-variables">Global variables</h2>
+<dl>
+<dt id="ir_assignment_1.doc_count"><code class="name">var <span class="ident">doc_count</span></code></dt>
+<dd>
+<div class="desc"><p>Total no of documents</p></div>
+</dd>
+<dt id="ir_assignment_1.doc_id_name_map"><code class="name">var <span class="ident">doc_id_name_map</span></code></dt>
+<dd>
+<div class="desc"><p>Map of doc_id to file name</p></div>
+</dd>
+<dt id="ir_assignment_1.index"><code class="name">var <span class="ident">index</span></code></dt>
+<dd>
+<div class="desc"><p>Global variable for the Inverted Index</p></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="ir_assignment_1.and_op"><code class="name flex">
+<span>def <span class="ident">and_op</span></span>(<span>l1, l2)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>perform the and intersection between the two lists l1 and l2</p>
+<p>Args: l1 posting list for term 1 , l2 posting list for term 2</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def and_op(l1,l2):
+  &#34;&#34;&#34;
+  perform the and intersection between the two lists l1 and l2
+  \nArgs: l1 posting list for term 1 , l2 posting list for term 2 
+  &#34;&#34;&#34;
+  i = 0
+  j = 0
+  intersection = []
+  while i &lt; len(l1) and j &lt; len(l2):
+    if(l1[i] == l2[j]):
+      intersection.append(l1[i])
+      i += 1
+      j += 1
+    elif (l1[i] &lt; l2[j]):
+      i += 1
+    else:
+      j += 1
+  return intersection</code></pre>
+</details>
+</dd>
+<dt id="ir_assignment_1.convert"><code class="name flex">
+<span>def <span class="ident">convert</span></span>(<span>a, doc_id)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Another approach to just use ints instead of a full list to store doc ids in a binary form
+for example if we store 9 as the value, the binary value will be
+00001001 which means the 1st and 4th docs have the word</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def convert(a,doc_id):
+  &#34;&#34;&#34; 
+  Another approach to just use ints instead of a full list to store doc ids in a binary form
+  for example if we store 9 as the value, the binary value will be 
+  00001001 which means the 1st and 4th docs have the word
+  &#34;&#34;&#34;
+
+  l = 1&lt;&lt;doc_id
+  return a|l</code></pre>
+</details>
+</dd>
+<dt id="ir_assignment_1.edit_distance"><code class="name flex">
+<span>def <span class="ident">edit_distance</span></span>(<span>s1, s2)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Edit distance function using dynamic programming </p>
+<p>Can perform 3 operations: insert, delete, replace</p>
+<p>Args: s1(word 1), s2 (word 2)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def edit_distance(s1, s2):
+    &#34;&#34;&#34; Edit distance function using dynamic programming 
+    \nCan perform 3 operations: insert, delete, replace
+    \n Args: s1(word 1), s2 (word 2)
+    &#34;&#34;&#34;
+    m = len(s1)
+    n = len(s2)
+    dp = np.zeros((m+1, n+1))
+    for i in range(m+1):
+        dp[i][0] = i
+    for j in range(n+1):
+        dp[0][j] = j
+    for i in range(1, m+1):
+        for j in range(1, n+1):
+            if s1[i-1] == s2[j-1]:
+                dp[i][j] = dp[i-1][j-1]
+            else:
+                dp[i][j] = 1 + min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1])
+    return dp[m][n]</code></pre>
+</details>
+</dd>
+<dt id="ir_assignment_1.getCorrect"><code class="name flex">
+<span>def <span class="ident">getCorrect</span></span>(<span>q_t, index)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>function to get the correct word for each query term,
+if query term exists in index return q_t directly,
+otherwise find k closest values and return the first one with the smallest distance</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getCorrect(q_t,index):
+  &#34;&#34;&#34;
+  function to get the correct word for each query term,
+  if query term exists in index return q_t directly,
+  otherwise find k closest values and return the first one with the smallest distance
+  &#34;&#34;&#34;
+  if index.find(q_t):
+    return q_t
+  q_ed = kClosest(q_t,index)
+  for i in q_ed:
+    if int(i[1]) == 0:
+      return q_t
+    elif int(i[1]) &lt;= 5:
+      return i[0]
+    else:
+      return q_t</code></pre>
+</details>
+</dd>
+<dt id="ir_assignment_1.getFilename"><code class="name flex">
+<span>def <span class="ident">getFilename</span></span>(<span>ret_list)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>get the file names corresponding to the final retirval list </p>
+<p>Args: ret_list (list of doc_ids)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getFilename(ret_list):
+  &#34;&#34;&#34;
+  get the file names corresponding to the final retirval list 
+  \nArgs: ret_list (list of doc_ids)
+  &#34;&#34;&#34;
+  for ret in ret_list[0]:
+    print(ret)
+    print(f&#34;Found in {doc_id_name_map[ret]}&#34;)
+  if len(ret_list[0]) == 0:
+    print(&#34;Not found&#34;)</code></pre>
+</details>
+</dd>
+<dt id="ir_assignment_1.get_main"><code class="name flex">
+<span>def <span class="ident">get_main</span></span>(<span>word)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>get the original word where $ is the last character,rotate word till we reach state </p>
+<p>Args : word</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_main(word):
+  &#34;&#34;&#34;get the original word where $ is the last character,rotate word till we reach state 
+    \n Args : word
+  &#34;&#34;&#34;
+
+  while(word[-1] != &#39;$&#39;):
+    word = rotateString(word,1)
+  return word</code></pre>
+</details>
+</dd>
+<dt id="ir_assignment_1.kClosest"><code class="name flex">
+<span>def <span class="ident">kClosest</span></span>(<span>q, index, k=5)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return k (default 5) words in the corpus with least edit distance to the input query
+runs on against all the query terms where difference in length is 2</p>
+<p>Args: query, index, k (default 5)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def kClosest(q,index,k = 5):
+    &#34;&#34;&#34;
+    Return k (default 5) words in the corpus with least edit distance to the input query 
+    runs on against all the query terms where difference in length is 2
+    \n Args: query, index, k (default 5)
+    &#34;&#34;&#34;
+    output = {}
+    q = q + &#34;$&#34;
+    l = len(q)
+    for w in index.voc_list:
+      if abs(l - len(w)) &lt;= 2:
+        d = edit_distance(q,w)
+        output[w] = d
+    s = sorted(output.items(), key = lambda kv : kv[1])
+    return s[:k]</code></pre>
+</details>
+</dd>
+<dt id="ir_assignment_1.lemmatize"><code class="name flex">
+<span>def <span class="ident">lemmatize</span></span>(<span>s)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Lemmatization using the WordNet lemmatizer</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def lemmatize(s):
+    &#34;&#34;&#34; Lemmatization using the WordNet lemmatizer &#34;&#34;&#34; 
+    return lemmatizer.lemmatize(s)</code></pre>
+</details>
+</dd>
+<dt id="ir_assignment_1.not_op"><code class="name flex">
+<span>def <span class="ident">not_op</span></span>(<span>l, size)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>negate the list and create a new list with all elements in space size
+and not in l</p>
+<p>Args: l posting list , size (no of documents in corpus)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def not_op(l,size):
+  &#34;&#34;&#34;
+  negate the list and create a new list with all elements in space size 
+  and not in l
+  \nArgs: l posting list , size (no of documents in corpus)
+  &#34;&#34;&#34;
+  l_not = []
+  for i in range(1,size+1):
+    if i not in l:
+      l_not.append(i)
+  return l_not</code></pre>
+</details>
+</dd>
+<dt id="ir_assignment_1.or_op"><code class="name flex">
+<span>def <span class="ident">or_op</span></span>(<span>l1, l2)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>perform the or operation on the two lists
+l2 or l1</p>
+<p>Args: l1 posting list for term 1 , l2 posting list for term 2</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def or_op(l1,l2):
+  &#34;&#34;&#34;
+  perform the or operation on the two lists
+  l2 or l1
+  \nArgs: l1 posting list for term 1 , l2 posting list for term 2
+  &#34;&#34;&#34;
+  for i in l2:
+    if i not in l1:
+      l1.append(i)
+  return l1</code></pre>
+</details>
+</dd>
+<dt id="ir_assignment_1.permutation"><code class="name flex">
+<span>def <span class="ident">permutation</span></span>(<span>w)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>used to make permuterm for wildcard queries
+Arg: word</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def permutation(w):
+  &#34;&#34;&#34; used to make permuterm for wildcard queries \n Arg: word &#34;&#34;&#34; 
+  w = w + &#34;$&#34;
+  l = []
+  for i in range(0,len(w)):
+    l.append(rotateString(w,i))
+  return l</code></pre>
+</details>
+</dd>
+<dt id="ir_assignment_1.preProcess"><code class="name flex">
+<span>def <span class="ident">preProcess</span></span>(<span>directory)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Main function to generate the inverted index </p>
+<p>Args: directory name where the files are stored</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def preProcess(directory):
+    &#34;&#34;&#34; 
+    Main function to generate the inverted index 
+    \nArgs: directory name where the files are stored
+    &#34;&#34;&#34; 
+    i_index = InvertedIndex() # create the inverted index
+    files = os.listdir(directory) # get all the files in the directory
+    files_list = []
+    for file in files:
+        if file.endswith(&#34;.txt&#34;): # only store text files
+            files_list.append(file)
+            #print(file)
+    print(f&#34;Total no of files is {len(files_list)}&#34;)
+    global doc_count,doc_id_name_map
+    doc_count = len(files_list)
+    for i in range(0, len(files_list)):
+      # i is doc id
+      with open(directory + &#34;/&#34; + files_list[i], &#39;r&#39;) as f:
+        text = f.read()
+        doc_id_name_map[i+1] = files_list[i]
+        #text = re.sub(r&#39;[^\w\s]&#39;, &#39;&#39;, text)
+        text = re.sub(&#34;[^a-zA-Z]&#34;,&#39; &#39;,text) # Consider only alphabets
+        text = text.lower() # convert to lowercase
+        #print(text)
+        print(i+1,files_list[i])
+        tokens = tokenize(text) # tokenize
+        rm_data = remove_stop_words(tokens) # remove stopwords
+        stemmed = stem_words(rm_data) # perform stemming
+
+        for w in stemmed:
+          p = permutation(w) # find all the permutations of the word
+          for pw in p:
+            i_index.insert(pw,i+1) # insert the word into the index
+    i_Index_save = open(&#39;output_index_final&#39;, &#39;ab&#39;)
+    pickle.dump(i_index, i_Index_save) # Save the generated index for later use                     
+    i_Index_save.close()
+    return i_index</code></pre>
+</details>
+</dd>
+<dt id="ir_assignment_1.read_pickle"><code class="name flex">
+<span>def <span class="ident">read_pickle</span></span>(<span>filename='output_index_final')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Function to load and read index from pre-existing pickle file </p>
+<p>Args: filename</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_pickle(filename=&#34;output_index_final&#34;):
+  &#34;&#34;&#34; Function to load and read index from pre-existing pickle file 
+  \n Args: filename
+  &#34;&#34;&#34; 
+  filename = &#34;output_index_final&#34;
+  with open(filename,&#34;rb&#34;) as f:
+    index = pickle.load(f)
+    return index</code></pre>
+</details>
+</dd>
+<dt id="ir_assignment_1.remove_stop_words"><code class="name flex">
+<span>def <span class="ident">remove_stop_words</span></span>(<span>s)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Use nltk english stopwords list and remove such tokens from the list</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def remove_stop_words(s):
+    &#34;&#34;&#34; Use nltk english stopwords list and remove such tokens from the list &#34;&#34;&#34;
+    stop_words = set(stopwords)
+    filtered_list = [w for w in s if w not in stop_words]
+    return filtered_list</code></pre>
+</details>
+</dd>
+<dt id="ir_assignment_1.retrieve"><code class="name flex">
+<span>def <span class="ident">retrieve</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Query retrival function
+take query input from user
+tokenize,stem it
+then create a retrival list for each query and perform boolean operations.</p>
+<p>and print the final list of documents satisfying the query</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def retrieve():
+  &#34;&#34;&#34;
+  Query retrival function
+  take query input from user
+  tokenize,stem it
+  then create a retrival list for each query and perform boolean operations.
+  \n and print the final list of documents satisfying the query
+  &#34;&#34;&#34;
+  query = input()
+  query = tokenize(query) # tokenize the query
+  retrival_list = []
+  connect = [] # connectors like and or not
+  conn = [&#34;and$&#34;,&#34;or$&#34;,&#34;not$&#34;]
+  for q in query:
+    q =  q + &#34;$&#34; # append $ 
+    if q in conn:
+      connect.append(q)
+      continue
+    # don&#39;t correct wildcard queries 
+    if &#34;*&#34; in q:
+      while(q[-1] != &#39;*&#39;):
+        q = rotateString(q,1)
+        l = index.search(q[:-1])
+    else:
+      q = getCorrect(q,index) # get correct value for the query
+      l = index.find(q) # search in index
+    if l:
+      print(q)
+      print(l)
+    else:
+      l = []
+      print(&#34;No result found for &#34; + q)
+    if len(connect) &gt;= 1 and connect[-1] == &#34;not$&#34;:
+      #print(&#34;trig&#34;)
+      temp_cp = not_oper(l.copy(),doc_count)
+      retrival_list.append(temp_cp)
+    else:
+      retrival_list.append(l.copy())
+  if len(retrival_list) &gt; 1:
+    i_1 = 0
+    i_2 = 1
+    i = 0
+    for con in connect:
+      #print(con)
+      if con == &#34;and$&#34;:
+        comp = and_op(retrival_list[i_1],retrival_list[i_2])
+        temp_cp = retrival_list[2:]
+        retrival_list = [comp]
+        retrival_list.extend(temp_cp)
+      elif con == &#34;or$&#34;:
+        #print(&#34;trig&#34;,i)
+        comp = or_op(retrival_list[i_1],retrival_list[i_2])
+        #print(&#34;computed&#34; , comp)
+        temp_cp = retrival_list[2:]
+        #print(&#34;temp_cp&#34;, temp_cp)
+        #comp.extend(temp_cp)
+        retrival_list = [comp]
+        retrival_list.extend(temp_cp)
+        i += 1
+        #print(&#34;ret_list&#34;,retrival_list)
+      elif con == &#34;not$&#34;:
+        continue
+  getFilename(retrival_list)
+  return retrival_list</code></pre>
+</details>
+</dd>
+<dt id="ir_assignment_1.rotateString"><code class="name flex">
+<span>def <span class="ident">rotateString</span></span>(<span>s, n)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>rotate string s to the left by n places</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def rotateString(s, n):
+  &#34;&#34;&#34; rotate string s to the left by n places &#34;&#34;&#34;
+  return s[n:] + s[:n]</code></pre>
+</details>
+</dd>
+<dt id="ir_assignment_1.stem_words"><code class="name flex">
+<span>def <span class="ident">stem_words</span></span>(<span>word_list)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Use the snowball stemming (Modified porter algorithm) to stem words</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def stem_words(word_list):
+    &#34;&#34;&#34; Use the snowball stemming (Modified porter algorithm) to stem words &#34;&#34;&#34; 
+
+    stemmer = SnowballStemmer(&#34;english&#34;)
+    stemmed_words = []
+    for word in word_list:
+        stemmed_words.append(stemmer.stem(word))
+    return stemmed_words</code></pre>
+</details>
+</dd>
+<dt id="ir_assignment_1.tokenize"><code class="name flex">
+<span>def <span class="ident">tokenize</span></span>(<span>s)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Tokenize the string using word_tokenize from nltk</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def tokenize(s):
+    &#34;&#34;&#34; Tokenize the string using word_tokenize from nltk &#34;&#34;&#34;
+    return word_tokenize(s)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="ir_assignment_1.InvertedIndex"><code class="flex name class">
+<span>class <span class="ident">InvertedIndex</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>InvertedIndex data structure class with insert, search and find functions</p>
+<p>Initializes the inverted index data structure.
+index: A dictionary that maps words to a list of doc_ids
+voc_list: A list of all the unique words in the index
+voc_count: The number of words in the index</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class InvertedIndex:
+    &#34;&#34;&#34; InvertedIndex data structure class with insert, search and find functions&#34;&#34;&#34;
+    def __init__(self):
+        &#34;&#34;&#34;
+        Initializes the inverted index data structure.
+        index: A dictionary that maps words to a list of doc_ids
+        voc_list: A list of all the unique words in the index
+        voc_count: The number of words in the index
+        &#34;&#34;&#34;
+        self.index = {}
+        self.voc_list = []
+        self.voc_count = 0
+    
+    def insert(self,word,doc_id):
+        &#34;&#34;&#34;
+        Inserts a word into the inverted index and adds a doc_id to the list 
+        \nArgs: word, doc_id
+        &#34;&#34;&#34;
+        if word not in self.index:
+            self.index[word] = [doc_id]
+            if word[-1] == &#34;$&#34;:
+              self.voc_list.append(word)
+            self.voc_count += 1
+        if doc_id not in self.index[word]:
+          self.index[word].append(doc_id)
+    def search(self,word):
+      &#34;&#34;&#34;
+      Searches the inverted index for a word and returns the list of doc_ids
+      \n used in case of wildcard queries
+      \n Args: word
+      &#34;&#34;&#34;
+      final_output = []
+      for w in self.index.keys():
+        if w.startswith(word):
+          final_output.append({ get_main(w): self.index[w]})
+      return final_output
+    def find(self,word):
+        &#34;&#34;&#34;
+        Find if a word exists in the inverted index
+        and returns the list of doc_ids otherwise None
+        \n used in case of regular queries 
+        \n Args: word
+        &#34;&#34;&#34;
+        if word in self.index:
+            return self.index[word]
+        else:
+            return None
+    def getSize(self):
+      &#34;&#34;&#34;
+      Returns the number of words in the inverted index
+      &#34;&#34;&#34;
+      return len(self.index)</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="ir_assignment_1.InvertedIndex.find"><code class="name flex">
+<span>def <span class="ident">find</span></span>(<span>self, word)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Find if a word exists in the inverted index
+and returns the list of doc_ids otherwise None</p>
+<p>used in case of regular queries </p>
+<p>Args: word</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find(self,word):
+    &#34;&#34;&#34;
+    Find if a word exists in the inverted index
+    and returns the list of doc_ids otherwise None
+    \n used in case of regular queries 
+    \n Args: word
+    &#34;&#34;&#34;
+    if word in self.index:
+        return self.index[word]
+    else:
+        return None</code></pre>
+</details>
+</dd>
+<dt id="ir_assignment_1.InvertedIndex.getSize"><code class="name flex">
+<span>def <span class="ident">getSize</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the number of words in the inverted index</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getSize(self):
+  &#34;&#34;&#34;
+  Returns the number of words in the inverted index
+  &#34;&#34;&#34;
+  return len(self.index)</code></pre>
+</details>
+</dd>
+<dt id="ir_assignment_1.InvertedIndex.insert"><code class="name flex">
+<span>def <span class="ident">insert</span></span>(<span>self, word, doc_id)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Inserts a word into the inverted index and adds a doc_id to the list </p>
+<p>Args: word, doc_id</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def insert(self,word,doc_id):
+    &#34;&#34;&#34;
+    Inserts a word into the inverted index and adds a doc_id to the list 
+    \nArgs: word, doc_id
+    &#34;&#34;&#34;
+    if word not in self.index:
+        self.index[word] = [doc_id]
+        if word[-1] == &#34;$&#34;:
+          self.voc_list.append(word)
+        self.voc_count += 1
+    if doc_id not in self.index[word]:
+      self.index[word].append(doc_id)</code></pre>
+</details>
+</dd>
+<dt id="ir_assignment_1.InvertedIndex.search"><code class="name flex">
+<span>def <span class="ident">search</span></span>(<span>self, word)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Searches the inverted index for a word and returns the list of doc_ids</p>
+<p>used in case of wildcard queries</p>
+<p>Args: word</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def search(self,word):
+  &#34;&#34;&#34;
+  Searches the inverted index for a word and returns the list of doc_ids
+  \n used in case of wildcard queries
+  \n Args: word
+  &#34;&#34;&#34;
+  final_output = []
+  for w in self.index.keys():
+    if w.startswith(word):
+      final_output.append({ get_main(w): self.index[w]})
+  return final_output</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-variables">Global variables</a></h3>
+<ul class="">
+<li><code><a title="ir_assignment_1.doc_count" href="#ir_assignment_1.doc_count">doc_count</a></code></li>
+<li><code><a title="ir_assignment_1.doc_id_name_map" href="#ir_assignment_1.doc_id_name_map">doc_id_name_map</a></code></li>
+<li><code><a title="ir_assignment_1.index" href="#ir_assignment_1.index">index</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="two-column">
+<li><code><a title="ir_assignment_1.and_op" href="#ir_assignment_1.and_op">and_op</a></code></li>
+<li><code><a title="ir_assignment_1.convert" href="#ir_assignment_1.convert">convert</a></code></li>
+<li><code><a title="ir_assignment_1.edit_distance" href="#ir_assignment_1.edit_distance">edit_distance</a></code></li>
+<li><code><a title="ir_assignment_1.getCorrect" href="#ir_assignment_1.getCorrect">getCorrect</a></code></li>
+<li><code><a title="ir_assignment_1.getFilename" href="#ir_assignment_1.getFilename">getFilename</a></code></li>
+<li><code><a title="ir_assignment_1.get_main" href="#ir_assignment_1.get_main">get_main</a></code></li>
+<li><code><a title="ir_assignment_1.kClosest" href="#ir_assignment_1.kClosest">kClosest</a></code></li>
+<li><code><a title="ir_assignment_1.lemmatize" href="#ir_assignment_1.lemmatize">lemmatize</a></code></li>
+<li><code><a title="ir_assignment_1.not_op" href="#ir_assignment_1.not_op">not_op</a></code></li>
+<li><code><a title="ir_assignment_1.or_op" href="#ir_assignment_1.or_op">or_op</a></code></li>
+<li><code><a title="ir_assignment_1.permutation" href="#ir_assignment_1.permutation">permutation</a></code></li>
+<li><code><a title="ir_assignment_1.preProcess" href="#ir_assignment_1.preProcess">preProcess</a></code></li>
+<li><code><a title="ir_assignment_1.read_pickle" href="#ir_assignment_1.read_pickle">read_pickle</a></code></li>
+<li><code><a title="ir_assignment_1.remove_stop_words" href="#ir_assignment_1.remove_stop_words">remove_stop_words</a></code></li>
+<li><code><a title="ir_assignment_1.retrieve" href="#ir_assignment_1.retrieve">retrieve</a></code></li>
+<li><code><a title="ir_assignment_1.rotateString" href="#ir_assignment_1.rotateString">rotateString</a></code></li>
+<li><code><a title="ir_assignment_1.stem_words" href="#ir_assignment_1.stem_words">stem_words</a></code></li>
+<li><code><a title="ir_assignment_1.tokenize" href="#ir_assignment_1.tokenize">tokenize</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="ir_assignment_1.InvertedIndex" href="#ir_assignment_1.InvertedIndex">InvertedIndex</a></code></h4>
+<ul class="">
+<li><code><a title="ir_assignment_1.InvertedIndex.find" href="#ir_assignment_1.InvertedIndex.find">find</a></code></li>
+<li><code><a title="ir_assignment_1.InvertedIndex.getSize" href="#ir_assignment_1.InvertedIndex.getSize">getSize</a></code></li>
+<li><code><a title="ir_assignment_1.InvertedIndex.insert" href="#ir_assignment_1.InvertedIndex.insert">insert</a></code></li>
+<li><code><a title="ir_assignment_1.InvertedIndex.search" href="#ir_assignment_1.InvertedIndex.search">search</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
